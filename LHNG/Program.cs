@@ -10,8 +10,8 @@ namespace LHNG
         int XB = 0;
         int YB = 0;
         int TB = 20;
-        int VBX = 3;
-        int VBY = 3;
+        int VBX = 2;
+        int VBY = 2;
 
         int YJ1 = 0;
         int YJ2 = 0;
@@ -48,14 +48,14 @@ namespace LHNG
                 && YB + TB / 2 > YJ2 - AlturaJ() / 2)
           
             {
-                VBX = -VBX;
+                VBX = -VBX -1;
             }
             
             if (XB - TB / 2 < XJ1() + LarguraJ() / 2
                 && YB - TB / 2 < YJ1 + AlturaJ() / 2
                 && YB + TB / 2 > YJ1 - AlturaJ() / 2)
             {
-                VBX = -VBX;
+                VBX = -VBX +1;
             }
 
             if (YB + TB / 2 > ClientSize.Height / 2)
@@ -72,26 +72,28 @@ namespace LHNG
             {
                 XB = 0;
                 YB = 0;
+                VBX = 2;
+                VBY = 2;
             }
 
             if (Keyboard.GetState().IsKeyDown(Key.W))
             {
-                YJ1 = YJ1 + 5;
+                YJ1 = YJ1 + 10;
             }
 
             if (Keyboard.GetState().IsKeyDown(Key.S))
             {
-                YJ1 = YJ1 - 5;
+                YJ1 = YJ1 - 10;
             }
 
             if (Keyboard.GetState().IsKeyDown(Key.Up))
             {
-                YJ2 = YJ2 + 5;
+                YJ2 = YJ2 + 10;
             }
 
             if (Keyboard.GetState().IsKeyDown(Key.Down))
             {
-                YJ2 = YJ2 - 5;
+                YJ2 = YJ2 - 10;
             }
         }
 
